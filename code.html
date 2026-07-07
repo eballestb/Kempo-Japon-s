@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kempo Japonés - El Camino del Guerrero</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#ab8985",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-container": "#f7f4f3",
+                        "on-primary-container": "#fff2f0",
+                        "primary": "#ffb3ac",
+                        "on-surface-variant": "#e4beba",
+                        "on-secondary-container": "#bab8b7",
+                        "inverse-on-surface": "#2f3131",
+                        "surface-variant": "#333535",
+                        "primary-container": "#d32f2f",
+                        "surface-container-lowest": "#0c0f0f",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-tertiary": "#313030",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "surface-container-low": "#1a1c1c",
+                        "background": "#121414",
+                        "secondary-container": "#4a4949",
+                        "secondary": "#c8c6c5",
+                        "tertiary-container": "#706f6f",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "inverse-primary": "#ba1a20",
+                        "on-surface": "#e2e2e2",
+                        "on-primary-fixed-variant": "#930010",
+                        "outline-variant": "#5b403d",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-tint": "#ffb3ac",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-container-high": "#282a2b",
+                        "primary-fixed": "#ffdad6",
+                        "on-primary": "#680008",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-dim": "#121414",
+                        "surface": "#121414",
+                        "surface-bright": "#37393a",
+                        "on-secondary": "#313030",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-highest": "#333535",
+                        "surface-container": "#1e2020",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#410003",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "tertiary": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "stack-lg": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Archivo Narrow"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Archivo Narrow"],
+                        "headline-lg": ["Archivo Narrow"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-lg": ["Archivo Narrow"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .sumi-e-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(211, 47, 47, 0.05) 0%, transparent 50%);
+        }
+        .texture-overlay {
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.05"/></svg>');
+            pointer-events: none;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1500ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: none !important;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden relative min-h-screen flex flex-col" style="--reveal-duration: 0.4s;">
+<div class="fixed inset-0 texture-overlay z-0"></div>
+<!-- 1. TopNavBar -->
+<nav class="bg-transparent border-b border-transparent full-width top-0 sticky flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 py-3 z-50 transition-all duration-150 backdrop-blur-md duration-500"><a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tighter uppercase flex items-center gap-2" href="#">
+<img alt="Logo Kempo Japonés" class="w-10 h-10 object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgECyIvntAaEMuAbEZ_ICphLcFMD80SCHTq_KRf9T1B2zZTUYb3RCggq-ZUzXNNaGpDGcA6cQ_qyGV9jBMkui_68v5_dmEL549vX3nEhznqzEz1CVP95Ibi1eYZTGDDZNryED97MitXU0gMTfIW9Wwi9hZdSxoQVX0cwd2Qx7kmq293SfGRZ151uumfySe8zvKHN5CtQya64GPdFTAK6AO04XcVkMjjZ_8RqBF-Ys7FFCpqi4Y37eO_DLHnT0-m1WLJtdz276xRKQ"/>
+            Kempo Japonés
+        </a>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface hover:text-primary transition-all duration-500 hover:shadow-[0_0_10px_rgba(211,47,47,0.4)]" href="#historia">Historia</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface hover:text-primary transition-all duration-500 hover:shadow-[0_0_10px_rgba(211,47,47,0.4)]" href="#sensei">Sensei</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface hover:text-primary transition-all duration-500 hover:shadow-[0_0_10px_rgba(211,47,47,0.4)]" href="#dojo">Dojo</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface hover:text-primary transition-all duration-500 hover:shadow-[0_0_10px_rgba(211,47,47,0.4)]" href="#sucursales">Sucursales</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface hover:text-primary transition-all duration-500 hover:shadow-[0_0_10px_rgba(211,47,47,0.4)]" href="#planes">Planes</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-on-surface hover:text-primary transition-all duration-500 hover:shadow-[0_0_10px_rgba(211,47,47,0.4)]" href="#faq">FAQ</a>
+</div>
+<a class="hidden md:inline-flex bg-primary-container text-white font-label-sm text-label-sm uppercase px-6 py-2 border border-transparent hover:border-primary transition-all duration-500 items-center gap-2 tracking-wider hover:scale-105 hover:shadow-[0_0_20px_rgba(211,47,47,0.5)]" href="#unirse">
+            Unirse al Dojo
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button></nav>
+<main class="flex-grow z-10 relative">
+<!-- 2. Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center border-b border-surface-variant overflow-hidden">
+<div class="absolute inset-0 z-0 bg-surface-container-lowest"><div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10" style="background: linear-gradient(to right, #121414 0%, #121414 40%, rgba(18, 20, 20, 0.8) 60%, transparent 100%);"></div><img alt="Kempo martial arts master executing a powerful strike" class="w-full h-full object-cover object-right" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvMYLPUejPTBJGjQYceAVdpj_UsPp8wKDatWiUl_6BxBI695_nFLIbQm1RS-udMtNAFk9bPv6vc4IIH5cm5as4gOdo52pJieBLqQzNYcPkzilVBf_CNI8XhCXJ6qxGY3CtWvtQvssY-rv68CsqgoB5DM0_7KORC7qN0g4g8wHYCU5y1ugt4my2stSzWwiTg6veuZAgYnmsbIcCRNDDj8J2s4jLDsqsq3xpUl4toGxu3tgEsm7h-SUR8KIJyPVdxnSg-zBQAfgdCFY"/></div>
+<div class="container mx-auto px-margin-desktop relative z-20 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 flex flex-col justify-center reveal active duration-500">
+<div class="inline-flex items-center gap-2 mb-stack-md">
+<div class="w-8 h-[2px] bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">El Camino del Guerrero</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-stack-md leading-tight">
+                        Aprende defensa <br/><span class="text-primary-container">personal real.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-2xl border-l-2 border-surface-variant pl-4">
+                        Forja tu espíritu, domina tu mente y fortalece tu cuerpo a través de la disciplina implacable del Kempo Japonés. No es solo un entrenamiento, es una forma de vida.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-stack-md">
+<a class="bg-primary-container text-white font-label-sm text-label-sm uppercase px-8 py-4 flex justify-center items-center gap-2 hover:bg-inverse-primary transition-colors border border-primary-container hover:scale-105 hover:shadow-[0_0_20px_rgba(211,47,47,0.5)] transition-all duration-200 duration-150 duration-500" href="#prueba">
+                            Reserva tu clase de prueba gratis
+                            <span class="material-symbols-outlined">chevron_right</span>
+</a>
+<a class="bg-transparent text-on-surface font-label-sm text-label-sm uppercase px-8 py-4 flex justify-center items-center gap-2 border border-surface-variant hover:border-primary hover:text-primary transition-colors" href="#historia">
+                            Descubrir el Kempo
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Historia y Tradición -->
+<section class="py-24 relative bg-background border-b border-surface-variant" id="historia">
+<div class="container mx-auto px-margin-desktop reveal active duration-500">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-margin-desktop items-center">
+<div class="order-2 md:order-1 relative">
+<div class="absolute -inset-4 border border-surface-variant bg-surface-container-lowest -z-10"></div>
+<img class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700 border border-surface-variant" data-alt="A detailed view of a traditional Japanese martial arts black belt tied around a white gi, worn and frayed at the edges showing years of intense training and dedication. Soft side lighting in a dark dojo setting." src="https://lh3.googleusercontent.com/aida/AP1WRLs4mRb2GN2NQ2SDbRGlu5ceHiZWV8O82aX3WKfmndLcT7H9yhXyub2sJFMbK0IgSPEcmzId7twSK9pQ4snfcvbuKQOSidkfe8eV_ZdCgsKkXjXRFlz8cRsIyzhzd-B4PfzvKmqIsBj8UIrgz44aG_ktCqNb5xAIvsvet65FFoqbTjaCLWxlAHvPi4CI_rY9ZoylQihOGVqRgDiEYHuqjZwJBiPV7z_v1DsmBxmmkqJcVrVjTVpo1DcS4g"/>
+<div class="absolute -bottom-6 -right-6 bg-surface p-4 border border-surface-variant">
+<span class="font-headline-md text-headline-md text-primary-container block text-center">武道</span>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<div class="inline-flex items-center gap-2 mb-stack-md">
+<div class="w-4 h-4 bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Historia &amp; Tradición</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-lg">El Espíritu del <span class="text-primary">Bushido</span></h2>
+<div class="space-y-stack-md text-on-secondary-container font-body-md">
+<p class="">
+                                El Nippon Kempo es un arte marcial japonés moderno que integra técnicas de golpeo, proyecciones y sumisiones. Nacido de la necesidad de un sistema de combate realista, se fundamenta en los principios inquebrantables del Bushido.
+                            </p>
+<p class="">
+                                En nuestro dojo, no solo enseñamos técnicas para someter a un oponente; cultivamos la mente para superar las batallas internas. La verdadera fuerza reside en el control, la precisión y la paz que se encuentra en medio del caos.
+                            </p>
+</div>
+<div class="mt-stack-lg border-t border-surface-variant pt-stack-md">
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary-container block"></span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Disciplina de Hierro</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary-container block"></span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Precisión Técnica</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary-container block"></span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Respeto Absoluto</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Roberto García (Sensei) -->
+<section class="py-24 bg-surface-container-lowest relative border-b border-surface-variant" id="sensei">
+<div class="container mx-auto px-margin-desktop reveal active duration-500">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-margin-desktop">
+<div class="inline-flex items-center justify-center gap-2 mb-stack-md">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Liderazgo</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Sensei Roberto García</h2>
+</div>
+<div class="bg-surface border border-surface-variant p-margin-mobile md:p-stack-lg flex flex-col md:flex-row gap-stack-lg items-start relative group">
+<div class="w-full md:w-1/3 shrink-0 relative">
+<div class="aspect-[3/4] bg-surface-variant overflow-hidden border border-surface-variant">
+<img class="w-full h-full object-cover grayscale mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-150" data-alt="A dramatic black and white portrait of a seasoned martial arts master, Sensei Roberto Garcia, wearing a traditional dark gi. Sharp lighting highlights his focused, intense expression against a solid dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvWhhMcPBj8MO25SElx6nxn_j-00jMDsF0jfnWsNqadseBdFHkKzBLhdryDcVV0aDaKa9nbGqAFTGhaPB1esnSM3T-nOXOJUdqsz0vPxPtbLd0ikT8MUqr34_r8QY_NVg36e1ClG3jsVALgw5LgNO8G3RFGuFfgo2KWfCk-IT0YwAs_cH3zbXF2dpCim4X0px3-75THnsP6vtIf7JgbWda40HBUXRtm-oQ8Bb7yt8jrraXvTjHQMma6r3ckR8XyA5tcE23NxMxGqg"/>
+</div>
+<div class="absolute -bottom-4 -right-4 bg-primary-container text-white px-4 py-2 font-label-sm text-label-sm uppercase tracking-wider">
+                                5° Dan
+                            </div>
+</div>
+<div class="w-full md:w-2/3">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Una Vida Dedicada al Budo</h3>
+<p class="font-body-md text-on-surface-variant mb-stack-md">
+                                Con más de 20 años de experiencia ininterrumpida, Sensei Roberto García se formó bajo la tutela directa de grandes maestros en Osaka, Japón. Su enfoque combina la rudeza técnica del combate tradicional con una pedagogía moderna, exigiendo siempre el máximo potencial de cada estudiante.
+                            </p>
+<div class="grid grid-cols-2 gap-stack-md border-t border-surface-variant pt-stack-md mt-stack-md">
+<div>
+<span class="block font-display-lg text-display-lg text-primary-container leading-none">20+</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container uppercase">Años de Práctica</span>
+</div>
+<div>
+<span class="block font-display-lg text-display-lg text-primary-container leading-none">Osaka</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container uppercase">Formación Directa</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Galería "Nuestro Dojo" -->
+<section class="py-24 bg-background border-b border-surface-variant" id="dojo">
+<div class="container mx-auto px-margin-desktop reveal active duration-500">
+<div class="flex justify-between items-end mb-margin-desktop">
+<div>
+<div class="inline-flex items-center gap-2 mb-stack-sm">
+<div class="w-4 h-4 bg-primary-container"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">El Espacio</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Nuestro Dojo</h2>
+</div>
+<a class="hidden md:flex font-label-sm text-label-sm text-primary uppercase items-center gap-2 hover:text-white transition-colors" href="#">
+                        Ver todas las instalaciones
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="relative w-full overflow-hidden border border-surface-variant bg-surface dojo-carousel-container">
+<!-- Slides -->
+<div class="flex transition-transform ease-in-out dojo-carousel-track duration-300 duration-700" style="transform: translateX(-100%);">
+<!-- Slide 1 -->
+<div class="min-w-full relative aspect-[16/9] md:aspect-[21/9]">
+<img alt="Sala Principal de Práctica" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 reveal active" src="https://lh3.googleusercontent.com/aida/AP1WRLv8-0ZUtkXxx8KqKTO7enDdyx_y8fWZF5eripIS2SELxp2wHVEiiz1gEOe0JL49cL8fbpATTa_t9ZAIdpjLxV5mwoW0AAyjv6upcZ1rLrDJnGYM4OEoAzAy-PwuYwSFK-Anp9CQqojuQeiLAlHs7gWPGjLa3bF7UIGm9LOan8oOKo4jDKLutLJwFlxeLuBjuqeI-3nL5w0UlxJwKKU-0FwuZx-8c7pUzvXh9LMHLvgE35G7vdgVLVFvjg" style="transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1) !important;"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex items-end p-stack-lg">
+<span class="font-label-sm text-label-sm text-white uppercase tracking-widest">Sala Principal de Práctica</span>
+</div>
+</div>
+<!-- Slide 2 -->
+<div class="min-w-full relative aspect-[16/9] md:aspect-[21/9]">
+<img alt="Zona de Combate" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 reveal active" src="https://lh3.googleusercontent.com/aida/AP1WRLtTM3vgXi-ZrakBuQhk89XfNvIwvWFnhA498uaXPJHaCT8SrIKnBDiRONBcESG07NM-1m09MSNLr-EOUxoCGOu5L3oBE8LivFHZXbjLtcs3ph7QcZHEZNiMxOgYNa9OzzzGW1G_FC1ImjpVl8YvtWTBgtLXPuOCv_sA8oE4UnaDjwK0bt9Z4bbCjsoK8OFew4PBjvw9iMWarTx5IhSlna46RemzoQtVC8MpD9cqenZPQojPie50gzlKvg" style="transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1) !important;"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex items-end p-stack-lg">
+<span class="font-label-sm text-label-sm text-white uppercase tracking-widest">Zona de Combate</span>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="min-w-full relative aspect-[16/9] md:aspect-[21/9]">
+<img alt="Disciplina y Tradición" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 reveal active" src="https://lh3.googleusercontent.com/aida/AP1WRLutSIrBTiTDpw7aJuQthmxbbIIJz3AHyD3CrfAEjvBH05kq5bYPHBc6pakgXAdOvW61D5QfALpr-LTbFPPCXPvop107TAJPpvWeISFYAR9Z31NJr_NxCQq55x4VbzLjUkR9DRfuD37iz9Bp8Rgxw9ddezIfHx36iSpkLEVGWusAFdlQxn5In8oBzM68qjxUjlrc1eS06slGdXEwxE6RUUhXYaRvm9fQG2orhFae8KjQv6i3FpBQG1-NWQ" style="transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1) !important;"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent flex items-end p-stack-lg">
+<span class="font-label-sm text-label-sm text-white uppercase tracking-widest">Disciplina y Tradición</span>
+</div>
+</div>
+</div>
+<!-- Navigation Arrows -->
+<button class="absolute top-1/2 left-4 md:left-8 -translate-y-1/2 w-12 h-12 bg-background/80 hover:bg-primary-container text-white flex items-center justify-center border border-surface-variant hover:border-primary-container transition-colors z-10 prev-slide">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute top-1/2 right-4 md:right-8 -translate-y-1/2 w-12 h-12 bg-background/80 hover:bg-primary-container text-white flex items-center justify-center border border-surface-variant hover:border-primary-container transition-colors z-10 next-slide">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<!-- Pagination Dots -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10 carousel-dots">
+<button class="w-8 h-1 bg-surface-variant transition-all hover:bg-white" data-index="0"></button>
+<button class="w-12 h-1 bg-primary-container transition-all" data-index="1"></button>
+<button class="w-8 h-1 bg-surface-variant transition-all hover:bg-white" data-index="2"></button>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Sucursales -->
+<section class="py-24 bg-surface border-b border-surface-variant" id="sucursales">
+<div class="container mx-auto px-margin-desktop reveal active duration-500">
+<div class="text-center mb-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm">Encuentra tu Dojo</h2>
+<p class="font-body-md text-on-surface-variant">Ubicaciones estratégicas para tu entrenamiento.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-margin-desktop">
+<!-- Sucursal 1 -->
+<div class="border border-surface-variant bg-background p-stack-lg group hover:border-primary-container transition-colors relative">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 group-hover:text-primary-container transition-all">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Sede Juriquilla</h3>
+<p class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-widest mb-stack-md border-b border-surface-variant pb-2 inline-block">Plaza Tiara</p>
+<div class="space-y-stack-sm mb-stack-md">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">schedule</span>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface uppercase">Lunes a Viernes</span>
+<span class="block font-body-md text-on-surface-variant">4:00 PM - 9:00 PM</span>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 font-label-sm text-label-sm text-primary uppercase hover:text-white transition-colors border border-surface-variant px-4 py-2 mt-stack-sm group-hover:border-primary" href="#">
+                            Ver Mapa <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<!-- Sucursal 2 -->
+<div class="border border-surface-variant bg-background p-stack-lg group hover:border-primary-container transition-colors relative">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 group-hover:text-primary-container transition-all">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Sede Hércules</h3>
+<p class="font-label-sm text-label-sm text-on-secondary-container uppercase tracking-widest mb-stack-md border-b border-surface-variant pb-2 inline-block">Av. Hércules 123</p>
+<div class="space-y-stack-sm mb-stack-md">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">schedule</span>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface uppercase">Lunes a Viernes</span>
+<span class="block font-body-md text-on-surface-variant">4:00 PM - 9:00 PM</span>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 font-label-sm text-label-sm text-primary uppercase hover:text-white transition-colors border border-surface-variant px-4 py-2 mt-stack-sm group-hover:border-primary" href="#">
+                            Ver Mapa <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Planes y Precios -->
+<section class="py-24 bg-surface-container-lowest border-b border-surface-variant relative sumi-e-bg" id="planes">
+<div class="container mx-auto px-margin-desktop relative z-10 reveal active duration-500">
+<div class="text-center mb-margin-desktop max-w-2xl mx-auto">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-stack-sm">Compromiso</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">Invierte en tu Disciplina</h2>
+<p class="font-body-md text-on-surface-variant">Un camino claro, sin cuotas ocultas. Dedícate a entrenar, nosotros ponemos el espacio y la instrucción.</p>
+</div>
+<div class="max-w-md mx-auto">
+<div class="border border-primary-container bg-surface relative transition-all hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(211,47,47,0.3)] hover:border-primary duration-150 duration-700">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-white px-6 py-1 font-label-sm text-label-sm uppercase tracking-widest whitespace-nowrap">
+                            Recomendado
+                        </div>
+<div class="p-stack-lg text-center border-b border-surface-variant bg-surface-variant/20">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Plan Único</h3>
+<div class="flex items-baseline justify-center gap-1">
+<span class="font-display-lg text-display-lg text-primary-container">$1,200</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">/mes</span>
+</div>
+</div>
+<div class="p-stack-lg">
+<ul class="space-y-stack-md mb-stack-lg">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+<span class="font-body-md text-on-surface">Acceso a todas las clases</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+<span class="font-body-md text-on-surface">Ambas sucursales (Juriquilla/Hércules)</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+<span class="font-body-md text-on-surface font-bold text-white">Inscripción Gratis</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check</span>
+<span class="font-body-md text-on-surface">Uso libre del equipo del dojo</span>
+</li>
+</ul>
+<a class="w-full block text-center bg-primary-container text-white font-label-sm text-label-sm uppercase px-6 py-4 hover:bg-inverse-primary transition-colors border border-transparent hover:scale-105 hover:shadow-[0_0_20px_rgba(211,47,47,0.5)] transition-all duration-200 duration-500" href="#unirse">
+                                Comenzar Ahora
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Testimonios -->
+<section class="py-24 bg-background border-b border-surface-variant overflow-hidden reveal active" style="transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1) !important;">
+<div class="container mx-auto px-margin-desktop reveal active duration-500">
+<div class="flex items-center gap-4 mb-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-on-surface whitespace-nowrap">La Voz del Dojo</h2>
+<div class="h-[1px] bg-surface-variant w-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<!-- Testimonial 1 -->
+<div class="border border-surface-variant bg-surface p-stack-lg">
+<div class="mb-stack-md text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-stack-lg italic">
+                            "El nivel de exigencia técnica es alto, pero el ambiente es de total respeto. En 6 meses he mejorado mi condición física y mi enfoque mental drásticamente."
+                        </p>
+<div class="flex items-center gap-4 border-t border-surface-variant pt-stack-sm">
+<div class="w-10 h-10 bg-surface-variant rounded-full overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="A small black and white portrait of a male martial arts student looking focused and serious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4hcJcNxqOZg-IgTXAWxIo_IfGCc7TL16glJHmCX_OwB2SxX9y4ogKQB8_f-eCR35v8eZBF2j7sYVH_MuucKYuKLB-Azo5L3_WHmNUI9-UDS5qvaM8ZMvVUKyGa30MG6p4RYp8v9wTNQaG1ea79JiKzEs2AkDKbttjvQEXudNslKguOTZoA7kCFGmOxnDerRFvWdVUHjpdFQnnCTu9Pi-0R-y25rBmBAoXyRmT9GUHOlggkeQTT0OTffPWpILXvJT3M5_6ZZ2uTx0"/>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md text-on-surface text-lg">Juan P.</span>
+<span class="block font-label-sm text-label-sm text-primary uppercase">Cinta Verde</span>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="border border-surface-variant bg-surface p-stack-lg">
+<div class="mb-stack-md text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-stack-lg italic">
+                            "Buscaba defensa personal real, sin coreografías. El Sensei Roberto enseña con una claridad impresionante. Cada clase es un reto que vale la pena."
+                        </p>
+<div class="flex items-center gap-4 border-t border-surface-variant pt-stack-sm">
+<div class="w-10 h-10 bg-surface-variant rounded-full overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="A small black and white portrait of a female martial arts student in a gi, smiling subtly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZDZ1PCG51duGIqNU15jHyoyluFYNWS_doo-f7JgMSx4Axu5OI2Che9CZSzbLN0x9pRee-sLV2-uaV-XXL3klHkkqCaAgKPgMRcSlSmyNc3i6tqM9HjVglPJiMNpDUpERNLZwuEKldI0XUettZqubqAOyjTnaUc1798wXNGbGvDaVvT7dr9TqlwXKRtMIULRQZMqLWeNfoRvS6UI_hCgOPSYG-0s37JPAfy62OLcrsyglwSId00AgyDgA9IUaeoGrbWWLjzNEiCkQ"/>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md text-on-surface text-lg">Elena R.</span>
+<span class="block font-label-sm text-label-sm text-primary uppercase">Cinta Blanca Avanzada</span>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="border border-surface-variant bg-surface p-stack-lg">
+<div class="mb-stack-md text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-stack-lg italic">
+                            "He entrenado otros estilos antes, pero el Kempo Japonés aquí tiene una estructura impecable. Entiendes el 'por qué' detrás de cada movimiento."
+                        </p>
+<div class="flex items-center gap-4 border-t border-surface-variant pt-stack-sm">
+<div class="w-10 h-10 bg-surface-variant rounded-full overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="A small black and white portrait of a male martial arts student wiping sweat from his brow, looking determined." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKLHCu1IGJ9nzo79n5L6kFXpiMf8LI0c4b6Vc0_PyI0jYsPbK8MpdLvTEN7eh1ZdKIK6kckjD0NUD-C0AARj53y5JGvg1NpnaGwe7oPUL0KMq3SQbhEf_Gb8gmAWVHlNfZYYJztKOt9fQ4Y8WtGFBidnJ3zJvQD6KbXyPxAwYoXj4pmhGYYTqlSt2Dzled172nywr5kicHDN96JScGGMnRYjtHbvNjLjSOn4woLA4fr-zcQszH2Bs2ddZESZ9VC-_qOVfEW_no-kM"/>
+</div>
+<div>
+<span class="block font-headline-md text-headline-md text-on-surface text-lg">Carlos M.</span>
+<span class="block font-label-sm text-label-sm text-primary uppercase">Cinta Café</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. FAQ -->
+<section class="py-24 bg-surface-container-lowest border-b border-surface-variant reveal active" id="faq" style="transition: 2500ms cubic-bezier(0.4, 0, 0.2, 1) !important;">
+<div class="container mx-auto px-margin-desktop max-w-3xl reveal active duration-500">
+<div class="text-center mb-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Preguntas Frecuentes</h2>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="border border-surface-variant bg-surface">
+<button class="w-full text-left p-stack-md flex justify-between items-center hover:bg-surface-variant/30 transition-colors group">
+<span class="font-headline-md text-headline-md text-base text-on-surface">¿Necesito experiencia previa en artes marciales?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">add</span>
+</button>
+<div class="p-stack-md pt-0 text-on-surface-variant font-body-md border-t border-surface-variant hidden">
+                            No. Nuestro dojo está abierto para principiantes absolutos. Las clases están estructuradas para que aprendas desde los fundamentos básicos de postura y golpeo antes de avanzar a técnicas más complejas.
+                        </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border border-surface-variant bg-surface">
+<button class="w-full text-left p-stack-md flex justify-between items-center hover:bg-surface-variant/30 transition-colors group">
+<span class="font-headline-md text-headline-md text-base text-on-surface">¿Qué equipo necesito para empezar?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">add</span>
+</button>
+<div class="p-stack-md pt-0 text-on-surface-variant font-body-md border-t border-surface-variant hidden">
+                            Para tu clase de prueba solo necesitas ropa deportiva cómoda (pants o shorts largos y camiseta). Una vez inscrito, te asesoraremos para la adquisición de tu Karategi (uniforme) y equipo de protección básico.
+                        </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border border-surface-variant bg-surface">
+<button class="w-full text-left p-stack-md flex justify-between items-center hover:bg-surface-variant/30 transition-colors group">
+<span class="font-headline-md text-headline-md text-base text-on-surface">¿Hay límite de edad?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">add</span>
+</button>
+<div class="p-stack-md pt-0 text-on-surface-variant font-body-md border-t border-surface-variant hidden">
+                            Aceptamos estudiantes a partir de los 14 años en adelante. No hay un límite máximo de edad, el entrenamiento se adapta a las capacidades físicas de cada individuo siempre respetando la exigencia técnica.
+                        </div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="border border-surface-variant bg-surface">
+<button class="w-full text-left p-stack-md flex justify-between items-center hover:bg-surface-variant/30 transition-colors group">
+<span class="font-headline-md text-headline-md text-base text-on-surface">¿Cómo funciona la clase de prueba?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">add</span>
+</button>
+<div class="p-stack-md pt-0 text-on-surface-variant font-body-md border-t border-surface-variant hidden">
+                            La clase de prueba es totalmente gratuita y sin compromiso. Participarás en una sesión regular adaptada a tu nivel para que experimentes la dinámica del dojo, conozcas al Sensei y sientas el ambiente de entrenamiento.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- 10. Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20 full-width flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-lg gap-stack-md z-10 relative reveal active duration-500">
+<div class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<img alt="Logo Kempo Japonés" class="w-8 h-8 object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgECyIvntAaEMuAbEZ_ICphLcFMD80SCHTq_KRf9T1B2zZTUYb3RCggq-ZUzXNNaGpDGcA6cQ_qyGV9jBMkui_68v5_dmEL549vX3nEhznqzEz1CVP95Ibi1eYZTGDDZNryED97MitXU0gMTfIW9Wwi9hZdSxoQVX0cwd2Qx7kmq293SfGRZ151uumfySe8zvKHN5CtQya64GPdFTAK6AO04XcVkMjjZ_8RqBF-Ys7FFCpqi4Y37eO_DLHnT0-m1WLJtdz276xRKQ"/>
+<span class="uppercase tracking-tighter">Kempo Japonés</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">
+            © 2024 Kempo Japonés. El Camino del Guerrero.
+        </div>
+<div class="flex gap-stack-md">
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary transition-colors uppercase" href="#">WhatsApp</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary transition-colors uppercase" href="#">Instagram</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary transition-colors uppercase" href="#">Facebook</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary transition-colors uppercase" href="#">Términos</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-primary transition-colors uppercase" href="#">Privacidad</a>
+</div>
+</footer>
+<script>
+        // Intersection Observer for reveal animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+
+        // Simple FAQ accordion logic
+        document.querySelectorAll('#faq button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.material-symbols-outlined');
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.textContent = 'remove';
+                } else {
+                    content.classList.add('hidden');
+                    icon.textContent = 'add';
+                }
+            });
+        });
+
+        // Dojo Carousel Logic
+        const track = document.querySelector('.dojo-carousel-track');
+        if (track) {
+            const container = document.querySelector('.dojo-carousel-container');
+            const prevBtn = document.querySelector('.prev-slide');
+            const nextBtn = document.querySelector('.next-slide');
+            const dots = document.querySelectorAll('.carousel-dots button');
+            let currentIndex = 0;
+            const slideCount = dots.length;
+            let autoPlayInterval;
+
+            function updateCarousel(index) {
+                track.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.replace('w-8', 'w-12');
+                        dot.classList.replace('bg-surface-variant', 'bg-primary-container');
+                        dot.classList.remove('hover:bg-white');
+                    } else {
+                        dot.classList.replace('w-12', 'w-8');
+                        dot.classList.replace('bg-primary-container', 'bg-surface-variant');
+                        dot.classList.add('hover:bg-white');
+                    }
+                });
+            }
+
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(() => {
+                    currentIndex = (currentIndex === slideCount - 1) ? 0 : currentIndex + 1;
+                    updateCarousel(currentIndex);
+                }, 5000);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            startAutoPlay();
+
+            if (container) {
+                container.addEventListener('mouseenter', stopAutoPlay);
+                container.addEventListener('mouseleave', startAutoPlay);
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? slideCount - 1 : currentIndex - 1;
+                updateCarousel(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex === slideCount - 1) ? 0 : currentIndex + 1;
+                updateCarousel(currentIndex);
+            });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    currentIndex = parseInt(e.target.dataset.index);
+                    updateCarousel(currentIndex);
+                });
+            });
+        }
+
+        // Nav scroll logic
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-surface-container-lowest', 'h-12', 'border-outline-variant/30', 'shadow-md', 'py-2');
+                nav.classList.remove('bg-transparent', 'border-transparent', 'h-16', 'py-3');
+            } else {
+                nav.classList.add('bg-transparent', 'border-transparent', 'h-16', 'py-3');
+                nav.classList.remove('bg-surface-container-lowest', 'h-12', 'border-outline-variant/30', 'shadow-md', 'py-2');
+            }
+        });
+    </script>
+</body></html>
